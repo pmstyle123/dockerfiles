@@ -1,7 +1,6 @@
 #include <dlfcn.h>
 #include <pthread.h>
 #include <stdio.h>
-
 // THIS IS TO AVOID A SIGFAULT WHEN RUNNING python3.6 manage.py runserver
 // This should be fixed at some point by Alpine and/or Python
 // Check this issue for more info
@@ -27,6 +26,5 @@ int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_
     if (used) {
         pthread_attr_destroy(&local);
     }
-
     return ret;
 }
